@@ -112,7 +112,7 @@ func NewPhoneWebPair(deviceId string) (pwpair *NeighborsPair) {
 	return &NeighborsPair{id: deviceId}
 }
 
-//设置手机端websocket
+//设置websocket
 func (pwpair *NeighborsPair) setWs(ws *websocket.Conn, info string, neighbors []string) {
 	defer func() {
 		pwpair.clearMap()
@@ -130,7 +130,7 @@ func (pwpair *NeighborsPair) setWs(ws *websocket.Conn, info string, neighbors []
 	pwpair.regionInfo = append(pwpair.regionInfo, regionInfo)
 	var msg string
 	for {
-		//接收web  端发来的信息
+		//接收ws发来的信息
 		err := websocket.Message.Receive(ws, &msg)
 		if err != nil {
 			if err != io.EOF {
