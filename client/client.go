@@ -48,6 +48,8 @@ func main() {
 		fmt.Printf("Receive: %s\n", msg[:m])
 	}
 }
+
+
 func initConfig() {
 	wsAddr, _ = GetCfg().String("Default", "wsAddr")
 	origin, _ = GetCfg().String("Default", "origin")
