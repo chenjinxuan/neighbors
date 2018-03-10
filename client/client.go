@@ -49,6 +49,8 @@ func main() {
 	}
 }
 
+
+
 func initConfig() {
 	wsAddr, _ = GetCfg().String("Default", "wsAddr")
 	origin, _ = GetCfg().String("Default", "origin")
